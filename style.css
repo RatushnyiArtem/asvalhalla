@@ -291,3 +291,77 @@
     font-size: 26px;
         line-height: 29px;  
 }
+.burger{
+    display: none;
+}
+@media screen and (max-width: 1020px) {
+    .burger::before{
+        content: "";
+        background-color: #13AB93;
+        position: absolute;
+         width: 100%;
+         height: 2px;
+         left: 0;
+         top: 0;
+         transition: all 1s;
+     }
+     .burger{
+         z-index: 10;
+         position: relative;
+         width: 30px;
+         height: 30px;
+         display: block;
+         /* background-color: #fff; */
+     }
+     .burger::after{
+         content: "";
+         background-color: #13AB93;
+         position: absolute;
+          width: 100%;
+          height: 2px;
+          left: 0;
+          bottom: 10px;
+         transition: all 1s;
+      }
+      .burger span{
+          height: 2px;
+          width: 100%;
+          position: absolute;
+          background-color: #13AB93;
+          left: 0;
+          top: 9px;
+          transition: all 1s;
+      }  
+      .text_menu{
+        position: fixed;
+        top: -100%;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgb(85, 84, 84);
+        padding: 80px 220px;
+        transition: all 1s linear;
+    }
+    .text_menu.active{
+        top: 0;
+        /* flex-direction: column; */
+        display: block;
+        width: 100%;
+        /* margin: 0 auto; */
+        text-align: center;
+    }
+    .text_menu.active li{
+        margin-bottom: 80px;
+    }
+    .burger.active::before{
+        transform: rotate(45deg);
+        top: 10px;
+    }
+    .burger.active::after{
+        transform: rotate(-45deg);
+        bottom: 18px;
+    }
+    .burger.active span{
+        transform: scale(0);
+    }
+}
